@@ -1,0 +1,50 @@
+name: hammerspace-monitoring
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - prometheus_data:/prometheus
+      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
+    ports:
+      - "9090:9090"
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+    networks:
+      - hs-network
+    
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/default.yaml:/etc/grafana/provisioning/dashboards/default.yaml
+      - ./grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
+
+    ### Add New Dashboards here
+      - ./grafana/dashboards/hs_file_mobility.json:/etc/grafana/provisioning/dashboards/json/hs_file_mobility.json         # File Mobility
+      - ./grafana/dashboards/hs_file_replication.json:/etc/grafana/provisioning/dashboards/json/hs_file_replication.json   # File Replication
+      - ./grafana/dashboards/hs_fs_dash.json:/etc/grafana/provisioning/dashboards/json/hs_fs_dash.json                     # Filesystem Stats
+      - ./grafana/dashboards/hs_object.json:/etc/grafana/provisioning/dashboards/json/hs_object.json                       # Hammerspace Objects
+      - ./grafana/dashboards/hs_protocol.json:/etc/grafana/provisioning/dashboards/json/hs_protocol.json                   # Protocol Stats
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin!
+    networks:
+      - hs-network
+
+volumes:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  hs-network:
+    driver: bridge

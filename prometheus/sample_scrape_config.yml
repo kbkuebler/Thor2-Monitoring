@@ -1,0 +1,57 @@
+scrape_configs:
+- job_name: prometheus
+  static_configs:
+  - labels:
+      node_type: prometheus
+  - targets:
+    - localhost:9090
+### Add your hammerspace cluster
+- job_name: cluster
+  static_configs:
+  - labels:
+      cluster: hscluster.ourcompany.com
+      instance: hscluster.ourcompany.com
+      node_type: clusterip
+    targets:
+    - 10.0.0.71:9101
+    - 10.0.0.71:9102
+    - 10.0.0.71:9103
+### Add the individual Anvil nodes
+- job_name: anvil_nodes
+  static_configs:
+  - labels:
+      cluster: hscluster.ourcompany.com
+      instance: hscluster-anvil-1.asgard.local
+      node_type: anvil
+    targets:
+    - 10.0.0.65:9100
+  - labels:
+      cluster: hscluster.ourcompany.com
+      instance: hscluster-anvil-2.asgard.local
+      node_type: anvil
+    targets:
+    - 10.0.0.66:9100
+### Add the individual DSX nodes
+- job_name: dsx_nodes
+  static_configs:
+  - labels:
+      cluster: hscluster.ourcompany.com
+      instance: hscluster-dsx-1.asgard.local
+      node_type: dsx
+    targets:
+    - 10.0.0.68:9100
+    - 10.0.0.68:9105
+  - labels:
+      cluster: hscluster.ourcompany.com
+      instance: hscluster-dsx-2.asgard.local
+      node_type: dsx
+    targets:
+    - 10.0.0.69:9100
+    - 10.0.0.69:9105
+  - labels:
+      cluster: hscluster.ourcompany.com
+      instance: hscluster-dsx-3.asgard.local
+      node_type: dsx
+    targets:
+    - 10.0.0.70:9100
+    - 10.0.0.70:9105
