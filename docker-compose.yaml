@@ -6,7 +6,7 @@ services:
     container_name: prometheus
     restart: unless-stopped
     volumes:
-      - prometheus_data:/prometheus
+      - thor2_prometheus_data:/prometheus
       - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yaml
     ports:
       - "9090:9090"
@@ -25,13 +25,13 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - grafana_data:/var/lib/grafana
+      - thor2_grafana_data:/var/lib/grafana
       - ./grafana/default.yaml:/etc/grafana/provisioning/dashboards/default.yaml
       - ./grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
 
     ### Add New Dashboards here
       - ./grafana/dashboards/HammerspaceFileMobility-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFileMobility-5.1.json                         # File Mobility
-      - ./grafana/dashboards/HammerspaceFilesystemReplication-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemReplication-5.1.json   # File Replication
+      - ./grafana/dashboards/HammerspaceFilesystemReplication-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemReplication-5.1.json       # File Replication
       - ./grafana/dashboards/HammerspaceFilesystemStats-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemStats-5.1.json                   # Filesystem Stats
       - ./grafana/dashboards/HammerspaceObjectMobility-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceObjectMobility-5.1.json                     # Hammerspace Object Mobility
       - ./grafana/dashboards/HammerspaceProtocolStats-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceProtocolStats-5.1.json                       # Protocol Stats
@@ -42,8 +42,8 @@ services:
       - hs-network
 
 volumes:
-  prometheus_data:
-  grafana_data:
+  thor2_prometheus_data:
+  thor2_grafana_data:
 
 networks:
   hs-network:
