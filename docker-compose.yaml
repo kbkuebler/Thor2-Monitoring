@@ -30,11 +30,11 @@ services:
       - ./grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
 
     ### Add New Dashboards here
-      - ./grafana/dashboards/hs_file_mobility.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFileMobility-5.1.json       # File Mobility
-      - ./grafana/dashboards/hs_file_replication.json:/etc/grafana/provisioning/dashboards/json/HammerspaceProtocolStats-5.1.json   # File Replication
-      - ./grafana/dashboards/hs_fs_dash.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemStats-5.1.json          # Filesystem Stats
-      - ./grafana/dashboards/hs_object.json:/etc/grafana/provisioning/dashboards/json/HammerspaceObjectMobility-5.1.json            # Hammerspace Object Mobility
-      - ./grafana/dashboards/hs_protocol.json:/etc/grafana/provisioning/dashboards/json/HammerspaceProtocolStats-5.1.json           # Protocol Stats
+      - ./grafana/dashboards/HammerspaceFileMobility.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFileMobility-5.1.json                         # File Mobility
+      - ./grafana/dashboards/HammerspaceFilesystemReplication-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemReplication-5.1.json   # File Replication
+      - ./grafana/dashboards/HammerspaceFilesystemStats.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemStats-5.1.json                   # Filesystem Stats
+      - ./grafana/dashboards/HammerspaceObjectMobility.json:/etc/grafana/provisioning/dashboards/json/HammerspaceObjectMobility-5.1.json                     # Hammerspace Object Mobility
+      - ./grafana/dashboards/HammerspaceProtocolStats.json:/etc/grafana/provisioning/dashboards/json/HammerspaceProtocolStats-5.1.json                       # Protocol Stats
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin!
