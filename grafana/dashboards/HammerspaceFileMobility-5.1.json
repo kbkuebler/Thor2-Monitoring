@@ -86,7 +86,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -191,7 +191,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -207,7 +207,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -227,7 +227,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -332,7 +332,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -352,7 +352,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "Mobility jobs where an attempt is made.  ",
       "fieldConfig": {
@@ -443,7 +443,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -458,7 +458,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -478,7 +478,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -564,7 +564,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -579,7 +579,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -598,7 +598,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -679,7 +679,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "hammerspace_mobility_actively_moving_files{instance=~\"$node\",job=~\"$job\"}",
@@ -692,7 +692,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "avg_over_time(hammerspace_mobility_actively_moving_files{instance=~\"$node\",job=~\"$job\"}[5m])",
@@ -711,7 +711,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -905,7 +905,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -942,7 +942,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1136,7 +1136,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -1174,7 +1174,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1260,7 +1260,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1303,7 +1303,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1407,7 +1407,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "delta(hammerspace_actuary_non_convergence_events{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])",
@@ -1420,7 +1420,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "delta(hammerspace_actuary_cycles{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])",
@@ -1437,7 +1437,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1522,7 +1522,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1541,7 +1541,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1626,7 +1626,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "hammerspace_actuary_nanoseconds_per_cycle{instance=~\"$node\",job=~\"$job\"} / 1000000",
@@ -1667,7 +1667,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1751,7 +1751,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "rate(hammerspace_grading_files_count{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])",
@@ -1764,7 +1764,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1779,7 +1779,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "rate(hammerspace_grading_files_count{instance=~\"$node\",job=~\"$job\"}[15m])",
@@ -1793,7 +1793,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1813,7 +1813,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1903,7 +1903,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1946,7 +1946,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -2029,7 +2029,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "rate(hammerspace_grading_books_insertion_count{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])",
@@ -2042,7 +2042,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "-1*rate(hammerspace_grading_books_eviction_count{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])",
@@ -2055,7 +2055,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "rate(hammerspace_grading_books_insertion_count{instance=~\"$node\",job=~\"$job\"}[15m])",
@@ -2069,7 +2069,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "-1*rate(hammerspace_grading_books_eviction_count{instance=~\"$node\",job=~\"$job\"}[15m])",
@@ -2087,7 +2087,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -2170,7 +2170,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "expr": "hammerspace_grading_time_nanoseconds_per_cycle{instance=~\"$node\",job=~\"$job\"} / 1000000",
           "format": "time_series",
@@ -2186,7 +2186,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -2269,7 +2269,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "expr": "hammerspace_grading_alternatives_per_file{instance=~\"$node\",job=~\"$job\"}  ",
           "format": "time_series",
@@ -2298,7 +2298,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2402,7 +2402,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2418,7 +2418,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2438,7 +2438,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2542,7 +2542,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2562,7 +2562,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2645,7 +2645,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "expr": "sum(rate(hammerspace_dme_rpc_attempted_count{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (rpc)",
@@ -2684,7 +2684,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2788,7 +2788,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2808,7 +2808,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2912,7 +2912,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -2949,7 +2949,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3039,7 +3039,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3058,7 +3058,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3148,7 +3148,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3167,7 +3167,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3257,7 +3257,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3276,7 +3276,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3366,7 +3366,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3385,7 +3385,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3487,7 +3487,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3502,7 +3502,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3522,7 +3522,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3624,7 +3624,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3639,7 +3639,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3659,7 +3659,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3761,7 +3761,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3776,7 +3776,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3796,7 +3796,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -3898,7 +3898,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3913,7 +3913,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3942,7 +3942,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "DS_PROMETHEUS"
         },
         "definition": "label_values(hammerspace_exporter_duration,job)",
         "hide": 0,
@@ -3969,7 +3969,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "DS_PROMETHEUS"
         },
         "definition": "label_values(hammerspace_exporter_duration{job=~\"$job\"},instance)",
         "hide": 0,

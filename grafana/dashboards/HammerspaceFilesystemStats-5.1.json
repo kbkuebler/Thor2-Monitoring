@@ -94,7 +94,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -183,7 +183,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "sum(hammerspace_filesystem_open_files{instance=~\"$node\",job=~\"$job\"})",
@@ -195,7 +195,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -213,7 +213,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -302,7 +302,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "expr": "hammerspace_filesystem_open_files{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}",
           "instant": false,
@@ -329,7 +329,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -409,7 +409,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type!=\"files\"}[$__rate_interval]))",
@@ -420,7 +420,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type!=\"files\"}[15m]))",
@@ -436,7 +436,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -516,7 +516,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",sweep_type!=\"files\"}[$__rate_interval])) by (share)",
@@ -531,7 +531,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -611,7 +611,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(delta(hammerspace_filesystem_sweeper_current_run_number{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (share) != 0",
@@ -626,7 +626,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -706,7 +706,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "max(hammerspace_filesystem_sweeper_current_run_time{instance=~\"$node\",job=~\"$job\"}/60/60) by (share)",
@@ -734,7 +734,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -844,7 +844,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -857,7 +857,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type=\"non-files\"}[$__rate_interval]))",
@@ -869,7 +869,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type=\"items\"}[$__rate_interval]))",
@@ -885,7 +885,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -964,7 +964,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_errors_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval])) by (ret_name)",
@@ -1005,7 +1005,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1161,7 +1161,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1177,7 +1177,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1193,7 +1193,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1209,7 +1209,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1229,7 +1229,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1387,7 +1387,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "(sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op) / sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) by (op))*100",
@@ -1401,7 +1401,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "(sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op) / sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) by (op))*100",
@@ -1419,7 +1419,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "description": "",
       "fieldConfig": {
@@ -1588,7 +1588,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op) ",
@@ -1602,7 +1602,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\",ret_num=~\"0\"}[$__rate_interval])) by (op)",
@@ -1616,7 +1616,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\",ret_num=~\"0\"}[$__rate_interval])) by (op)",
@@ -1630,7 +1630,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op)",
@@ -1666,7 +1666,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1715,7 +1715,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum by (ttype) (rate(hammerspace_filesystem_kvs_cycles{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -1763,7 +1763,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1813,7 +1813,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "expr": "sum by (type) (hammerspace_filesystem_internal_cache_entries{instance=~\"$node\",job=~\"$job\",share=~\"$share\"})",
               "instant": false,
@@ -1858,7 +1858,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -1907,7 +1907,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum by (ctype) (rate(hammerspace_filesystem_kvs_commit{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -1953,7 +1953,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -2002,7 +2002,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "hammerspace_filesystem_memory{instance=~\"$node\",job=~\"$job\",share=\"/\"}/1024/1024",
@@ -2049,7 +2049,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -2098,7 +2098,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_kvs_write_bytes{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2173,7 +2173,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2229,7 +2229,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_compliance_updates{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2240,7 +2240,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_events_sent{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2288,7 +2288,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "fieldConfig": {
             "defaults": {
@@ -2342,7 +2342,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_compliance_updates_cycles{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2353,7 +2353,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_events_sent_cycles{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2426,7 +2426,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2488,7 +2488,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) by (op)",
@@ -2502,7 +2502,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) by (op)",
@@ -2555,7 +2555,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2617,7 +2617,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]))",
@@ -2631,7 +2631,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]))",
@@ -2684,7 +2684,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -2745,7 +2745,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2759,7 +2759,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2812,7 +2812,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "decimals": 2,
           "description": "",
@@ -2874,7 +2874,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2888,7 +2888,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2968,7 +2968,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -3030,7 +3030,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) by (op)",
@@ -3044,7 +3044,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) by (op)",
@@ -3097,7 +3097,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "description": "",
           "fieldConfig": {
@@ -3158,7 +3158,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3172,7 +3172,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3225,7 +3225,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "decimals": 2,
           "description": "",
@@ -3287,7 +3287,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3301,7 +3301,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3354,7 +3354,7 @@
           "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "decimals": 2,
           "description": "",
@@ -3416,7 +3416,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum((delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) + delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -3430,7 +3430,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "DS_PROMETHEUS"
               },
               "exemplar": true,
               "expr": "sum((delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) + delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -3518,7 +3518,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -3604,7 +3604,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3621,7 +3621,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -3707,7 +3707,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3724,7 +3724,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -3810,7 +3810,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3823,7 +3823,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "sum by (op) (rate(hammerspace_filesystem_nfs3_ops_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -3835,7 +3835,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "exemplar": true,
           "expr": "sum by (op) (rate(hammerspace_filesystem_nfs3_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -3851,7 +3851,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -3940,7 +3940,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3957,7 +3957,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "DS_PROMETHEUS"
       },
       "fieldConfig": {
         "defaults": {
@@ -4045,7 +4045,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "DS_PROMETHEUS"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -4071,7 +4071,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "DS_PROMETHEUS"
         },
         "definition": "label_values(hammerspace_exporter_duration,job)",
         "hide": 0,
@@ -4098,7 +4098,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "DS_PROMETHEUS"
         },
         "definition": "label_values(hammerspace_exporter_duration{job=~\"$job\"},instance)",
         "hide": 0,
@@ -4125,7 +4125,7 @@
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "DS_PROMETHEUS"
         },
         "definition": "label_values(hammerspace_filesystem_ops,share)",
         "hide": 0,

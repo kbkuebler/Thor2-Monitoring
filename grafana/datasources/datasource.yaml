@@ -3,6 +3,7 @@ datasources:
   - name: Prometheus
     type: prometheus
     access: proxy
+    uid: DS_PROMETHEUS
     url: http://prometheus:9090
     editable: true
     isDefault: true
