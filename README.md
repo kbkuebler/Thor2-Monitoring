@@ -8,7 +8,7 @@ In order to get started, clone this repo and change the values of `prometheus/pr
 
 Note: *It's recommended that you're on the latest version of Hammerspace (Version 5.1.14 or greater).For older versions, please see the Hammerspace documentation.*
 
-1. edit `prometheus/prometheus.yaml` with the correct ip/hostnames for your environment. There is a sample config for your reference. 
+1. Edit `prometheus/prometheus.yaml` with the correct ip/hostnames for your environment. There is a sample config for your reference. 
 
 2. SSH into your anvil and enable the Prometheus exporters:
 `cluster-update --prometheus-exporters-enable`
