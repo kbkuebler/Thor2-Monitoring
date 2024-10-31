@@ -38,7 +38,7 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin!
-      - - PROMETHEUS_UID=DS_PROMETHEUS
+      - PROMETHEUS_UID=DS_PROMETHEUS
     networks:
       - hs-network
 
