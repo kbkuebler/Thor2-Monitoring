@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "11.0.0"
+      "version": "11.4.0"
     },
     {
       "type": "datasource",
@@ -57,14 +57,9 @@
   "graphTooltip": 0,
   "id": null,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -73,22 +68,13 @@
       },
       "id": 8,
       "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Overview Stats",
       "type": "row"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -103,6 +89,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -166,12 +153,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_metadata_ops{instance=~\"$node\",job=~\"$job\",type=~\"read\"}[1m])",
           "format": "time_series",
@@ -182,7 +169,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_metadata_ops{instance=~\"$node\",job=~\"$job\",type=~\"write\"}[1m])*-1",
           "format": "time_series",
@@ -197,7 +184,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -212,6 +199,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -275,12 +263,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_compound_ops{instance=~\"$node\",job=~\"$job\",type=~\"success\"}[1m])",
           "format": "time_series",
@@ -291,7 +279,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_compound_ops{instance=~\"$node\",job=~\"$job\",type=~\"error\"}[1m])*-1",
           "format": "time_series",
@@ -306,7 +294,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -321,6 +309,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -384,12 +373,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_file_create_ops{instance=~\"$node\",job=~\"$job\"}[1m])",
           "format": "time_series",
@@ -400,7 +389,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_file_delete_ops{instance=~\"$node\",job=~\"$job\"}[1m])*-1",
           "format": "time_series",
@@ -415,7 +404,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -430,6 +419,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -528,12 +518,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_delegations{instance=~\"$node\",job=~\"$job\",type=\"granted\"}[1m])",
           "format": "time_series",
@@ -545,7 +535,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_delegations{instance=~\"$node\",job=~\"$job\",type=\"denied\"}[1m])*-1",
           "format": "time_series",
@@ -557,7 +547,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "hammerspace_protod_delegations{instance=~\"$node\",job=~\"$job\",type=\"active_delegations\"}",
           "format": "time_series",
@@ -585,7 +575,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -600,6 +590,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -698,12 +689,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_opens{instance=~\"$node\",job=~\"$job\",type=\"granted\"}[1m])",
           "format": "time_series",
@@ -715,7 +706,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "irate(hammerspace_protod_opens{instance=~\"$node\",job=~\"$job\",type=\"denied\"}[1m])*-1",
           "format": "time_series",
@@ -727,7 +718,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "hammerspace_protod_opens{instance=~\"$node\",job=~\"$job\",type=\"currently_open\"}",
           "format": "time_series",
@@ -756,7 +747,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "This can be blank, it is not a bug\nUsually if you see ongoing delay tracking issues check with PDFS",
       "fieldConfig": {
@@ -771,6 +762,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -802,7 +794,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -839,12 +832,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_op_delay_tracking{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (share_id, inode) != 0",
@@ -861,7 +854,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "This can be blank, it is not a bug\nUsually if you see ongoing delay tracking issues check with PDFS",
       "fieldConfig": {
@@ -876,6 +869,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -907,7 +901,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -944,12 +939,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_op_delay_tracking{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (volume, volume_id) != 0",
@@ -979,7 +974,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -994,6 +989,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1025,7 +1021,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1057,12 +1054,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_layout_errors_by_client{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (client_ip,client_id) != 0",
@@ -1079,7 +1076,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1094,6 +1091,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1125,7 +1123,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1157,12 +1156,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_layout_errors_by_volume{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (volume,volume_id) != 0",
@@ -1179,7 +1178,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1194,6 +1193,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1224,7 +1224,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1256,12 +1257,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_layout_errors_by_client{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (err)",
@@ -1278,7 +1279,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1293,6 +1294,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1323,7 +1325,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1355,12 +1358,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_layout_errors_by_volume{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (err)",
@@ -1390,7 +1393,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1405,6 +1408,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1436,7 +1440,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1468,12 +1473,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_server_errors_by_client{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (client_ip,client_id) != 0",
@@ -1490,7 +1495,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1505,6 +1510,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1535,7 +1541,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1567,12 +1574,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_server_errors_by_share{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (share_id,share)",
@@ -1589,7 +1596,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1604,6 +1611,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1634,7 +1642,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1666,12 +1675,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_server_errors_by_client{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (err)",
@@ -1688,7 +1697,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1703,6 +1712,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -1733,7 +1743,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -1765,12 +1776,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_nfs_protocol_server_errors_by_share{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (err)",
@@ -1786,10 +1797,6 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1801,7 +1808,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -1888,7 +1895,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m])",
               "format": "time_series",
@@ -1904,7 +1911,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -1991,7 +1998,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"filesystem\"}[1m])",
               "format": "time_series",
@@ -2007,7 +2014,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2094,7 +2101,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops_to_storage_volumes{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m])",
               "format": "time_series",
@@ -2110,7 +2117,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2174,7 +2181,6 @@
             "y": 98
           },
           "id": 40,
-          "interval": "",
           "options": {
             "legend": {
               "calcs": [
@@ -2198,7 +2204,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"shadow\"}[1m])",
               "format": "time_series",
@@ -2212,24 +2218,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Individual Op Rates",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2241,7 +2234,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2328,7 +2321,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "idelta(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m])",
               "format": "time_series",
@@ -2344,7 +2337,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2431,7 +2424,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "idelta(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"filesystem\"}[1m])",
               "format": "time_series",
@@ -2447,7 +2440,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2534,7 +2527,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "idelta(hammerspace_nfs_protocol_ops_to_storage_volumes{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m])",
               "format": "time_series",
@@ -2550,7 +2543,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2614,7 +2607,6 @@
             "y": 100
           },
           "id": 56,
-          "interval": "",
           "options": {
             "legend": {
               "calcs": [
@@ -2638,7 +2630,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "idelta(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"shadow\"}[1m])",
               "format": "time_series",
@@ -2652,24 +2644,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Individual op counts raw",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2681,7 +2660,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2768,7 +2747,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops_nanosec{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m]) / irate(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m]) / 1000000",
               "format": "time_series",
@@ -2784,7 +2763,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2871,7 +2850,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops_nanosec{instance=~\"$node\",job=~\"$job\",servicer=\"filesystem\"}[1m]) / irate(hammerspace_nfs_protocol_ops{instance=~\"$node\",job=~\"$job\",servicer=\"filesystem\"}[1m]) / 1000000",
               "format": "time_series",
@@ -2887,7 +2866,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2974,7 +2953,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops_to_storage_volumes_nanosec{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m]) / irate(hammerspace_nfs_protocol_ops_to_storage_volumes{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m]) / 1000000",
               "format": "time_series",
@@ -2988,24 +2967,11 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Walltime per Individual Op at each layer",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3017,7 +2983,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -3144,7 +3110,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops_nanosec{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m]) / 1000000",
               "format": "time_series",
@@ -3160,7 +3126,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -3287,7 +3253,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops_nanosec{instance=~\"$node\",job=~\"$job\",servicer=\"filesystem\"}[1m]) / 1000000",
               "format": "time_series",
@@ -3303,7 +3269,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -3389,7 +3355,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "irate(hammerspace_nfs_protocol_ops_to_storage_volumes_nanosec{instance=~\"$node\",job=~\"$job\",servicer=\"protocol\"}[1m]) / 1000000",
               "format": "time_series",
@@ -3403,21 +3369,12 @@
           "type": "timeseries"
         }
       ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Raw Walltime",
       "type": "row"
     }
   ],
   "refresh": "30s",
-  "schemaVersion": 39,
+  "schemaVersion": 40,
   "tags": [
     "Hammerspace"
   ],
@@ -3425,15 +3382,23 @@
     "list": [
       {
         "current": {},
+        "label": "Datasource",
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "DS_PROMETHEUS"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(hammerspace_exporter_duration,job)",
-        "hide": 0,
         "includeAll": false,
         "label": "Job",
-        "multi": false,
         "name": "job",
         "options": [],
         "query": {
@@ -3443,24 +3408,18 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       },
       {
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "DS_PROMETHEUS"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(hammerspace_exporter_duration{job=~\"$job\"},instance)",
-        "hide": 0,
         "includeAll": false,
         "label": "Host:",
-        "multi": false,
         "name": "node",
         "options": [],
         "query": {
@@ -3470,12 +3429,8 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       }
     ]
   },
@@ -3483,35 +3438,10 @@
     "from": "now-6h",
     "to": "now"
   },
-  "timeRangeUpdatedDuringEditOrView": false,
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
+  "timepicker": {},
   "timezone": "utc",
   "title": "Hammerspace Protocol Stats",
   "uid": "Iu61uvkWz",
-  "version": 24,
+  "version": 27,
   "weekStart": ""
 }

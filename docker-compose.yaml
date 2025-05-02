@@ -11,12 +11,11 @@ services:
         set -e
         mkdir -p /dashboards
         # Download dashboards from Hammerspace GitHub
-        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceFileMobility-5.1.json -o /dashboards/HammerspaceFileMobility-5.1.json
-        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceFilesystemReplication-5.1.json -o /dashboards/HammerspaceFilesystemReplication-5.1.json
-        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceFilesystemStats-5.1.json -o /dashboards/HammerspaceFilesystemStats-5.1.json
-        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceObjectMobility-5.1.json -o /dashboards/HammerspaceObjectMobility-5.1.json
-        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceProtocolStats-5.1.json -o /dashboards/HammerspaceProtocolStats-5.1.json
-        echo "Downloaded all dashboards successfully"
+        curl -L https://raw.githubusercontent.com/hammer-space/hammerspace-grafana-dashboards/refs/heads/main/5.1/hammerspace_file_mobility.json -o /dashboards/hammerspace_file_mobility.json
+        curl -L https://raw.githubusercontent.com/hammer-space/hammerspace-grafana-dashboards/refs/heads/main/5.1/hammerspace_filesystem_stats.json -o /dashboards/hammerspace_filesystem_stats.json        
+        curl -L https://raw.githubusercontent.com/hammer-space/hammerspace-grafana-dashboards/refs/heads/main/5.1/hammerspace_object_mobility.json -o /dashboards/hammerspace_object_mobility.json
+        curl -L https://raw.githubusercontent.com/hammer-space/hammerspace-grafana-dashboards/refs/heads/main/5.1/hammerspace_protocol_stats.json -o /dashboards/hammerspace_protocol_stats.json
+        curl -L https://raw.githubusercontent.com/hammer-space/hammerspace-grafana-dashboards/refs/heads/main/5.1/hammerspace_replication.json -o /dashboards/hammerspace_replication.json
     networks:
       - hs-network
 
@@ -47,7 +46,6 @@ services:
       - thor2_grafana_data:/var/lib/grafana
       - ./grafana/default.yaml:/etc/grafana/provisioning/dashboards/default.yaml
       - ./grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
-      # Simplified volume mount - mount the entire dashboards directory
       - ./grafana/dashboards:/etc/grafana/provisioning/dashboards/json
     environment:
       - GF_SECURITY_ADMIN_USER=admin

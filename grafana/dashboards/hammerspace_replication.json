@@ -24,56 +24,17 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 11,
   "links": [],
   "liveNow": false,
   "panels": [
-    {
-      "collapsed": true,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 0
-      },
-      "id": 108,
-      "panels": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 1
-          },
-          "id": 106,
-          "options": {
-            "code": {
-              "language": "plaintext",
-              "showLineNumbers": false,
-              "showMiniMap": false
-            },
-            "content": "",
-            "mode": "markdown"
-          },
-          "pluginVersion": "9.2.3",
-          "title": "README",
-          "type": "text"
-        }
-      ],
-      "title": "README",
-      "type": "row"
-    },
     {
       "collapsed": false,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 1
+        "y": 0
       },
       "id": 100,
       "panels": [],
@@ -83,7 +44,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -145,7 +106,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 2
+        "y": 1
       },
       "id": 89,
       "interval": "5s",
@@ -170,7 +131,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "builder",
           "expr": "max(hammerspace_filesystem_replication_send_behind{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}) by (from_site)",
@@ -185,7 +146,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -247,7 +208,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 2
+        "y": 1
       },
       "id": 93,
       "interval": "5s",
@@ -272,7 +233,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "expr": "max(hammerspace_filesystem_replication_send_behind{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}) by (to_site)",
@@ -287,7 +248,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "description": "Bouncing around zero is good, consistent positive is bad.",
       "fieldConfig": {
@@ -351,7 +312,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 10
+        "y": 9
       },
       "id": 95,
       "interval": "5s",
@@ -374,7 +335,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "builder",
           "expr": "max by(from_site) (deriv(hammerspace_filesystem_replication_send_behind{instance=~\"$node\", job=~\"$job\", share=~\"$share\"}[1m]))",
@@ -396,7 +357,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 17
       },
       "id": 91,
       "panels": [],
@@ -415,7 +376,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -477,7 +438,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 18
       },
       "id": 67,
       "interval": "5s",
@@ -504,7 +465,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -518,7 +479,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -536,7 +497,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -597,7 +558,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 26
       },
       "id": 103,
       "interval": "5s",
@@ -624,7 +585,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -642,7 +603,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -703,7 +664,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 27
+        "y": 26
       },
       "id": 104,
       "interval": "5s",
@@ -730,7 +691,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -748,7 +709,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -809,7 +770,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 35
+        "y": 34
       },
       "id": 109,
       "interval": "5s",
@@ -836,7 +797,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -854,7 +815,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -915,7 +876,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 35
+        "y": 34
       },
       "id": 110,
       "interval": "5s",
@@ -942,7 +903,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -960,7 +921,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "fieldConfig": {
         "defaults": {
@@ -1021,7 +982,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 42
       },
       "id": 97,
       "interval": "5s",
@@ -1048,7 +1009,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1062,7 +1023,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1076,7 +1037,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1090,7 +1051,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1115,7 +1076,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 50
       },
       "id": 65,
       "panels": [],
@@ -1134,7 +1095,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "description": "",
       "fieldConfig": {
@@ -1219,7 +1180,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 51
       },
       "id": 52,
       "interval": "5s",
@@ -1248,7 +1209,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1268,7 +1229,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "description": "",
       "fieldConfig": {
@@ -1335,7 +1296,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 60
       },
       "id": 101,
       "interval": "5s",
@@ -1365,7 +1326,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1381,7 +1342,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "expr": "(\n(sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",op=\"replication_merge_recs\",ret_num!=\"0\"}[$__rate_interval])) by (instance))\n /\n(sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",op=\"replication_merge_recs\"}[$__rate_interval])) by (instance))\n)*100",
@@ -1397,7 +1358,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": "g940I6xMk"
       },
       "description": "",
       "fieldConfig": {
@@ -1464,7 +1425,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 70
+        "y": 69
       },
       "id": 102,
       "interval": "5s",
@@ -1494,7 +1455,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1510,7 +1471,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": "g940I6xMk"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",op=\"replication_merge_recs\",ret_num=\"0\"}[$__rate_interval])) by (instance)",
@@ -1539,9 +1500,9 @@
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "g940I6xMk"
         },
-        "definition": "label_values(hammerspace_filesystem_exporter_build_info, job)",
+        "definition": "label_values(hammerspace_exporter_duration,job)",
         "hide": 0,
         "includeAll": false,
         "label": "Job",
@@ -1549,8 +1510,9 @@
         "name": "job",
         "options": [],
         "query": {
-          "query": "label_values(hammerspace_filesystem_exporter_build_info, job)",
-          "refId": "Prometheus-job-Variable-Query"
+          "qryType": 1,
+          "query": "label_values(hammerspace_exporter_duration,job)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
         "regex": "",
@@ -1563,15 +1525,19 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "g940I6xMk"
         },
-        "definition": "label_values(hammerspace_filesystem_exporter_build_info{job=~\"$job\"}, instance)",
+        "definition": "label_values(hammerspace_exporter_duration,instance)",
         "hide": 0,
         "includeAll": true,
         "label": "Host:",
@@ -1579,8 +1545,9 @@
         "name": "node",
         "options": [],
         "query": {
-          "query": "label_values(hammerspace_filesystem_exporter_build_info{job=~\"$job\"}, instance)",
-          "refId": "Prometheus-node-Variable-Query"
+          "qryType": 1,
+          "query": "label_values(hammerspace_exporter_duration,instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
         "regex": "",
@@ -1593,13 +1560,17 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "prometheus",
-          "uid": "PBFA97CFB590B2093"
+          "uid": "g940I6xMk"
         },
         "definition": "label_values(hammerspace_filesystem_ops,share)",
         "hide": 0,
@@ -1654,8 +1625,8 @@
     ]
   },
   "timezone": "utc",
-  "title": "Hammerspace Filesystem Replication",
+  "title": "Hammerspace Replication",
   "uid": "ioETu5ASk",
-  "version": 1,
+  "version": 33,
   "weekStart": ""
 }

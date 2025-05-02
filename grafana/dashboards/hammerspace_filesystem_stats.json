@@ -15,13 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "11.0.0"
-    },
-    {
-      "type": "panel",
-      "id": "graph",
-      "name": "Graph (old)",
-      "version": ""
+      "version": "11.4.0"
     },
     {
       "type": "datasource",
@@ -63,14 +57,9 @@
   "graphTooltip": 0,
   "id": null,
   "links": [],
-  "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -79,22 +68,13 @@
       },
       "id": 91,
       "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "Open Files",
       "type": "row"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -108,6 +88,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -177,13 +158,12 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.2.3",
-      "repeatDirection": "h",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(hammerspace_filesystem_open_files{instance=~\"$node\",job=~\"$job\"})",
@@ -195,7 +175,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -213,7 +193,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -227,6 +207,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 10,
             "gradientMode": "none",
@@ -246,7 +227,7 @@
             "spanNulls": false,
             "stacking": {
               "group": "A",
-              "mode": "normal"
+              "mode": "none"
             },
             "thresholdsStyle": {
               "mode": "off"
@@ -293,16 +274,15 @@
         "tooltip": {
           "maxHeight": 600,
           "mode": "multi",
-          "sort": "none"
+          "sort": "desc"
         }
       },
-      "pluginVersion": "9.2.3",
-      "repeatDirection": "h",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "expr": "hammerspace_filesystem_open_files{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}",
           "instant": false,
@@ -329,7 +309,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -343,6 +323,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -405,11 +386,12 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type!=\"files\"}[$__rate_interval]))",
@@ -420,7 +402,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type!=\"files\"}[15m]))",
@@ -436,7 +418,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -450,6 +432,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -512,11 +495,12 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",sweep_type!=\"files\"}[$__rate_interval])) by (share)",
@@ -531,7 +515,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -545,6 +529,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "points",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -607,11 +592,12 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(delta(hammerspace_filesystem_sweeper_current_run_number{instance=~\"$node\",job=~\"$job\"}[$__rate_interval])) by (share) != 0",
@@ -626,7 +612,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -640,6 +626,7 @@
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
+            "barWidthFactor": 0.6,
             "drawStyle": "line",
             "fillOpacity": 0,
             "gradientMode": "none",
@@ -702,11 +689,12 @@
           "sort": "desc"
         }
       },
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "max(hammerspace_filesystem_sweeper_current_run_time{instance=~\"$node\",job=~\"$job\"}/60/60) by (share)",
@@ -734,7 +722,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -844,7 +832,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": false,
@@ -857,7 +845,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type=\"non-files\"}[$__rate_interval]))",
@@ -869,7 +857,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\",sweep_type=\"items\"}[$__rate_interval]))",
@@ -885,7 +873,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -964,7 +952,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "expr": "sum(rate(hammerspace_filesystem_sweeper_current_run_swept_errors_count{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval])) by (ret_name)",
@@ -978,10 +966,6 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -990,22 +974,13 @@
       },
       "id": 65,
       "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "OP Return Codes",
       "type": "row"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1161,7 +1136,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1177,7 +1152,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1193,7 +1168,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1209,7 +1184,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1229,7 +1204,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1387,7 +1362,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "(sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op) / sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) by (op))*100",
@@ -1401,7 +1376,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "(sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op) / sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) by (op))*100",
@@ -1419,7 +1394,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -1588,7 +1563,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op) ",
@@ -1602,7 +1577,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\",ret_num=~\"0\"}[$__rate_interval])) by (op)",
@@ -1616,7 +1591,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\",ret_num=~\"0\"}[$__rate_interval])) by (op)",
@@ -1630,7 +1605,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum(delta(hammerspace_filesystem_op_results{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\",ret_num!=\"0\"}[$__rate_interval])) by (op)",
@@ -1647,10 +1622,6 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1660,13 +1631,9 @@
       "id": 69,
       "panels": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1674,48 +1641,23 @@
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
             "y": 62
           },
-          "hiddenSeries": false,
           "id": 80,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": false,
-            "avg": false,
-            "current": false,
-            "max": true,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": true,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum by (ttype) (rate(hammerspace_filesystem_kvs_cycles{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -1724,46 +1666,13 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "CPU Ticks spent interfacing with KVS",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:3145",
-              "format": "short",
-              "logBase": 10,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:3146",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1771,49 +1680,23 @@
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
             "y": 62
           },
-          "hiddenSeries": false,
           "id": 71,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "repeatDirection": "h",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": true,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "expr": "sum by (type) (hammerspace_filesystem_internal_cache_entries{instance=~\"$node\",job=~\"$job\",share=~\"$share\"})",
               "instant": false,
@@ -1821,44 +1704,13 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "Internal Caches",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "logBase": 2,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1866,48 +1718,23 @@
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
             "y": 70
           },
-          "hiddenSeries": false,
           "id": 85,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": false,
-            "avg": false,
-            "current": false,
-            "max": true,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": true,
-          "steppedLine": true,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum by (ctype) (rate(hammerspace_filesystem_kvs_commit{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -1916,44 +1743,13 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "KV Commits",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1961,48 +1757,23 @@
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
             "y": 70
           },
-          "hiddenSeries": false,
           "id": 70,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": true,
-            "current": true,
-            "max": true,
-            "min": true,
-            "show": true,
-            "total": false,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "repeatDirection": "h",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": true,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "hammerspace_filesystem_memory{instance=~\"$node\",job=~\"$job\",share=\"/\"}/1024/1024",
@@ -2012,44 +1783,13 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "RAM Usage",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2057,48 +1797,23 @@
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
             "y": 78
           },
-          "hiddenSeries": false,
           "id": 86,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": false,
-            "avg": false,
-            "current": false,
-            "max": true,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": true,
-          "steppedLine": true,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_kvs_write_bytes{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2107,46 +1822,8 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "KV Bytes Written",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:3221",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:3222",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
-        }
-      ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
+          "type": "timeseries"
         }
       ],
       "title": "Resource Usage",
@@ -2154,10 +1831,6 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2167,13 +1840,9 @@
       "id": 79,
       "panels": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2182,54 +1851,23 @@
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
             "y": 34
           },
-          "hiddenSeries": false,
           "id": 81,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": false,
-            "max": true,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "8.0.0",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "$$hashKey": "object:681",
-              "alias": "/^Out.*/",
-              "transform": "negative-Y"
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": true,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_compliance_updates{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2240,7 +1878,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_events_sent{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2249,46 +1887,13 @@
               "refId": "B"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "Internal Communication Events (shares = $share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:688",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:689",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "fieldConfig": {
             "defaults": {
@@ -2296,53 +1901,23 @@
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
             "y": 34
           },
-          "hiddenSeries": false,
           "id": 84,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": false,
-            "max": true,
-            "min": false,
-            "rightSide": false,
-            "show": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "8.0.0",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/^Out.*/",
-              "transform": "negative-Y"
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": true,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_compliance_updates_cycles{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2353,7 +1928,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_dme_events_sent_cycles{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -2362,44 +1937,8 @@
               "refId": "B"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "Internal Communication Event CPU Cycles (shares = $share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
-        }
-      ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
+          "type": "timeseries"
         }
       ],
       "title": "Inter component communication",
@@ -2407,10 +1946,6 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2420,13 +1955,9 @@
       "id": 8,
       "panels": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2435,60 +1966,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 65
           },
-          "hiddenSeries": false,
           "id": 58,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "total",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "$$hashKey": "object:1151",
-              "alias": "/ .B.$/",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) by (op)",
@@ -2502,7 +1996,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) by (op)",
@@ -2514,48 +2008,13 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "filesystem ops per second (shares=$share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:1160",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:1161",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2564,60 +2023,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 74
           },
-          "hiddenSeries": false,
           "id": 62,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "total",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "$$hashKey": "object:486",
-              "alias": "Background Ops",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]))",
@@ -2631,7 +2053,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]))",
@@ -2643,48 +2065,13 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "aggragate filesystem ops per second (shares=$share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2191",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2192",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2693,59 +2080,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 83
           },
-          "hiddenSeries": false,
           "id": 59,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "total",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/ .B.$/",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2759,7 +2110,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2771,50 +2122,14 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "milisec cpu busy per op by type (shares = $share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2424",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2425",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
-          "decimals": 2,
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -2822,59 +2137,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 92
           },
-          "hiddenSeries": false,
           "id": 60,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "total",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/ .B.$/",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2888,7 +2167,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum((rate(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / rate(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -2900,48 +2179,8 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "milisec cpu stalled per op by type (shares = $share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2505",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2506",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
-        }
-      ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
+          "type": "timeseries"
         }
       ],
       "title": "OP Rates",
@@ -2949,10 +2188,6 @@
     },
     {
       "collapsed": true,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2962,13 +2197,9 @@
       "id": 57,
       "panels": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -2977,60 +2208,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 66
           },
-          "hiddenSeries": false,
           "id": 54,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "max",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "$$hashKey": "object:574",
-              "alias": "/ .B.$/",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) by (op)",
@@ -3044,7 +2238,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) by (op)",
@@ -3056,48 +2250,13 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "filesystem ops per sample (rate is above) (shares=$share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2590",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2591",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "description": "",
           "fieldConfig": {
@@ -3106,59 +2265,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 75
           },
-          "hiddenSeries": false,
           "id": 53,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "total",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/ .B.$/",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3172,7 +2295,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3184,50 +2307,14 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "milisec cpu busy by op type (shares = $share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2675",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2676",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
-          "decimals": 2,
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -3235,59 +2322,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 84
           },
-          "hiddenSeries": false,
           "id": 55,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "total",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/ .B.$/",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3301,7 +2352,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum(delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) / 1000) by (op)",
@@ -3313,50 +2364,14 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "milisec cpu stalled by op type (shares = $share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2756",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2757",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
-          "decimals": 2,
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -3364,59 +2379,23 @@
             },
             "overrides": []
           },
-          "fill": 0,
-          "fillGradient": 0,
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 93
           },
-          "hiddenSeries": false,
           "id": 61,
           "interval": "5s",
-          "legend": {
-            "alignAsTable": true,
-            "avg": false,
-            "current": true,
-            "hideEmpty": true,
-            "hideZero": true,
-            "max": true,
-            "min": true,
-            "rightSide": true,
-            "show": true,
-            "sort": "total",
-            "sortDesc": true,
-            "total": true,
-            "values": true
-          },
-          "lines": true,
-          "linewidth": 1,
-          "links": [],
-          "nullPointMode": "null",
           "options": {
             "alertThreshold": true
           },
-          "percentage": false,
           "pluginVersion": "9.2.3",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [
-            {
-              "alias": "/ .B.$/",
-              "dashes": true,
-              "yaxis": 2
-            }
-          ],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum((delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval]) + delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background!=\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -3430,7 +2409,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "DS_PROMETHEUS"
+                "uid": "${DS_PROMETHEUS}"
               },
               "exemplar": true,
               "expr": "sum((delta(hammerspace_filesystem_ops_wait_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval]) + delta(hammerspace_filesystem_ops_busy_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\",background=~\"1\"}[$__rate_interval])) / 1000) by (op)",
@@ -3442,48 +2421,8 @@
               "refId": "A"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "milisec total cpu (used+stalled) by op type (shares = $share)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:2833",
-              "format": "short",
-              "label": "Client Path Ops",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:2834",
-              "format": "short",
-              "label": "Background Ops",
-              "logBase": 2,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
-        }
-      ],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
+          "type": "timeseries"
         }
       ],
       "title": "OP Raw",
@@ -3491,10 +2430,6 @@
     },
     {
       "collapsed": false,
-      "datasource": {
-        "type": "prometheus",
-        "uid": "g940I6xMk"
-      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -3503,22 +2438,13 @@
       },
       "id": 75,
       "panels": [],
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "g940I6xMk"
-          },
-          "refId": "A"
-        }
-      ],
       "title": "NFS3 ops issued against storage volumes",
       "type": "row"
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3604,7 +2530,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3621,7 +2547,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3707,7 +2633,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3724,7 +2650,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3810,7 +2736,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3823,7 +2749,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum by (op) (rate(hammerspace_filesystem_nfs3_ops_usec{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -3835,7 +2761,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "exemplar": true,
           "expr": "sum by (op) (rate(hammerspace_filesystem_nfs3_ops{instance=~\"$node\",job=~\"$job\",share=~\"$share\"}[$__rate_interval]))",
@@ -3851,7 +2777,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -3940,7 +2866,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -3957,7 +2883,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "DS_PROMETHEUS"
+        "uid": "${DS_PROMETHEUS}"
       },
       "fieldConfig": {
         "defaults": {
@@ -4045,7 +2971,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "DS_PROMETHEUS"
+            "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -4061,7 +2987,7 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 39,
+  "schemaVersion": 40,
   "tags": [
     "Hammerspace"
   ],
@@ -4069,15 +2995,23 @@
     "list": [
       {
         "current": {},
+        "label": "Datasource",
+        "name": "DS_PROMETHEUS",
+        "options": [],
+        "query": "prometheus",
+        "refresh": 1,
+        "regex": "",
+        "type": "datasource"
+      },
+      {
+        "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "DS_PROMETHEUS"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(hammerspace_exporter_duration,job)",
-        "hide": 0,
         "includeAll": false,
         "label": "Job",
-        "multi": false,
         "name": "job",
         "options": [],
         "query": {
@@ -4087,24 +3021,18 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       },
       {
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "DS_PROMETHEUS"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(hammerspace_exporter_duration{job=~\"$job\"},instance)",
-        "hide": 0,
         "includeAll": false,
         "label": "Host:",
-        "multi": false,
         "name": "node",
         "options": [],
         "query": {
@@ -4114,21 +3042,16 @@
         },
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
         "sort": 1,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       },
       {
         "current": {},
         "datasource": {
           "type": "prometheus",
-          "uid": "DS_PROMETHEUS"
+          "uid": "${DS_PROMETHEUS}"
         },
         "definition": "label_values(hammerspace_filesystem_ops,share)",
-        "hide": 0,
         "includeAll": true,
         "label": "Share",
         "multi": true,
@@ -4140,12 +3063,7 @@
         },
         "refresh": 2,
         "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
+        "type": "query"
       }
     ]
   },
@@ -4153,35 +3071,10 @@
     "from": "now-6h",
     "to": "now"
   },
-  "timeRangeUpdatedDuringEditOrView": false,
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
+  "timepicker": {},
   "timezone": "utc",
   "title": "Hammerspace Filesystem Stats",
   "uid": "a8OlTpkWz",
-  "version": 43,
+  "version": 47,
   "weekStart": ""
 }
