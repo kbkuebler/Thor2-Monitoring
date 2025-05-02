@@ -1,6 +1,25 @@
 name: hammerspace-monitoring
-
 services:
+  init-dashboards:
+    image: curlimages/curl:latest
+    container_name: init-dashboards
+    volumes:
+      - ./grafana/dashboards:/dashboards
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        mkdir -p /dashboards
+        # Download dashboards from Hammerspace GitHub
+        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceFileMobility-5.1.json -o /dashboards/HammerspaceFileMobility-5.1.json
+        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceFilesystemReplication-5.1.json -o /dashboards/HammerspaceFilesystemReplication-5.1.json
+        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceFilesystemStats-5.1.json -o /dashboards/HammerspaceFilesystemStats-5.1.json
+        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceObjectMobility-5.1.json -o /dashboards/HammerspaceObjectMobility-5.1.json
+        curl -L https://raw.githubusercontent.com/hammerspace-me/monitoring/main/dashboards/HammerspaceProtocolStats-5.1.json -o /dashboards/HammerspaceProtocolStats-5.1.json
+        echo "Downloaded all dashboards successfully"
+    networks:
+      - hs-network
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -15,26 +34,21 @@ services:
     networks:
       - hs-network
     
-
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
     restart: unless-stopped
     depends_on:
       - prometheus
+      - init-dashboards
     ports:
       - "3000:3000"
     volumes:
       - thor2_grafana_data:/var/lib/grafana
       - ./grafana/default.yaml:/etc/grafana/provisioning/dashboards/default.yaml
       - ./grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
-
-    ### Add New Dashboards here
-      - ./grafana/dashboards/HammerspaceFileMobility-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFileMobility-5.1.json                         # File Mobility
-      - ./grafana/dashboards/HammerspaceFilesystemReplication-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemReplication-5.1.json       # File Replication
-      - ./grafana/dashboards/HammerspaceFilesystemStats-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceFilesystemStats-5.1.json                   # Filesystem Stats
-      - ./grafana/dashboards/HammerspaceObjectMobility-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceObjectMobility-5.1.json                     # Hammerspace Object Mobility
-      - ./grafana/dashboards/HammerspaceProtocolStats-5.1.json:/etc/grafana/provisioning/dashboards/json/HammerspaceProtocolStats-5.1.json                       # Protocol Stats
+      # Simplified volume mount - mount the entire dashboards directory
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards/json
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin!
