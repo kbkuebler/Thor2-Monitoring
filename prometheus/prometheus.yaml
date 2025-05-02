@@ -13,6 +13,7 @@ scrape_configs:
 
 ###Modify the following to suit your cluster. This example has a single anvil and a single DSX.    
 - job_name: cluster
+  fallback_scrape_protocal: PrometheusText1.0.0
   static_configs:
   - labels:
       cluster: KBK-HOME
@@ -23,6 +24,7 @@ scrape_configs:
     - 192.168.100.5:9102
     - 192.168.100.5:9103
 - job_name: anvil_nodes
+  fallback_scrape_protocal: PrometheusText1.0.0
   static_configs:
   - labels:
       cluster: KBK-HOME
@@ -32,6 +34,7 @@ scrape_configs:
     - 192.168.100.5:9100
 - job_name: dsx_nodes
   static_configs:
+  fallback_scrape_protocal: PrometheusText1.0.0
   - labels:
       cluster: KBK-HOME
       instance: dsx-site-a.onaside.quest
