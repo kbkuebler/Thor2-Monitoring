@@ -1,6 +1,6 @@
 apiVersion: 1
 datasources:
-  - name: Prometheus
+  - name: Hammerspace Prometheus
     type: prometheus
     access: proxy
     uid: DS_PROMETHEUS
