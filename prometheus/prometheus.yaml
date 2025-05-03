@@ -42,6 +42,11 @@ scrape_configs:
       instance: dsx-site-a.onaside.quest
       node_type: dsx
     targets:
+<<<<<<< HEAD
     - 10.200.120.201:9100
     - 10.200.120.201:9105
 
+=======
+    - 192.168.100.6:9100
+    - 192.168.100.6:9105
+>>>>>>> refs/remotes/origin/master
