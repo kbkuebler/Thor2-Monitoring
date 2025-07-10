@@ -47,7 +47,7 @@ services:
       - ./grafana/default.yaml:/etc/grafana/provisioning/dashboards/default.yaml
       - ./grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
       - ./grafana/dashboards:/etc/grafana/provisioning/dashboards/json
-    environment:
+    env_file:
       - .env
     networks:
       - hs-network
