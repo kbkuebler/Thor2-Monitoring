@@ -6,6 +6,13 @@
 This should help as a Promhetheus/Grafana quick start for SEs and others that just want to test things out in a non-production environment.
 In order to get started, clone this repo and change the values of `prometheus/prometheus.yaml` to what's appropriate for your Hammerspace cluster.
 
+### Note: Replace the IP addresses with your actual IP addresses
+ - You can search and replace a.a.a.a with your Cluster IP
+ - You can search and replace n.n.n.n with your Anvil IP
+ - You can search and replace x.x.x.x with your DSX IP
+
+Once that is done, you can run `docker compose up` and monitor the output. If everything has come up and is working as desired, you can `ctrl-c` and then restart with `docker compose up -d` and you should be able to demo and POC.
+
 Note: *It's recommended that you're on the latest version of Hammerspace (Version 5.1.14 or greater).For older versions, please see the Hammerspace documentation.*
 
 1. Edit `prometheus/prometheus.yaml` with the correct ip/hostnames for your environment. There is a sample config for your reference. 
