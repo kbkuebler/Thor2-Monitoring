@@ -1,7 +1,7 @@
 name: hammerspace-monitoring
 services:
   init-dashboards:
-    image: curlimages/curl:latest
+    image: curlimages/curl:8.7.1
     container_name: init-dashboards
     volumes:
       - ./grafana/dashboards:/dashboards
@@ -20,7 +20,7 @@ services:
       - hs-network
 
   prometheus:
-    image: prom/prometheus:latest
+    image: prom/prometheus:v2.52.0
     container_name: prometheus
     restart: unless-stopped
     volumes:
@@ -34,7 +34,7 @@ services:
       - hs-network
     
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:12.0.2
     container_name: grafana
     restart: unless-stopped
     depends_on:
@@ -48,9 +48,7 @@ services:
       - ./grafana/datasources/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml
       - ./grafana/dashboards:/etc/grafana/provisioning/dashboards/json
     environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin!
-      - PROMETHEUS_UID=DS_PROMETHEUS
+      - .env
     networks:
       - hs-network
 
