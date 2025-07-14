@@ -6,10 +6,26 @@
 This should help as a Promhetheus/Grafana quick start for SEs and others that just want to test things out in a non-production environment.
 In order to get started, clone this repo and change the values of `prometheus/prometheus.yaml` to what's appropriate for your Hammerspace cluster.
 
+Take a look at `example_scrape_config.yml` for an example where there is HA Anvil configuration and more than one DSX node.
+
+
+
 ### Note: Replace the IP addresses with your actual IP addresses
  - You can search and replace a.a.a.a with your Cluster IP
  - You can search and replace n.n.n.n with your Anvil IP
  - You can search and replace x.x.x.x with your DSX IP
+
+### Another Note:
+
+You will most likely want to change the default password that Grafana starts with. You can modify the .env file in the root directory with your own information.
+
+The default configuration is:
+
+```shell
+GF_SECURITY_ADMIN_USER="admin"
+GF_SECURITY_ADMIN_PASSWORD="admin!"
+PROMETHEUS_UID="DS_PROMETHEUS"
+```
 
 Once that is done, you can run `docker compose up` and monitor the output. If everything has come up and is working as desired, you can `ctrl-c` and then restart with `docker compose up -d` and you should be able to demo and POC.
 
