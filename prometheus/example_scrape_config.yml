@@ -1,9 +1,16 @@
+global:
+  evaluation_interval: 15s
+  external_labels:
+    monitor: example
+  scrape_interval: 15s
+
 scrape_configs:
 - job_name: prometheus
+  fallback_scrape_protocol: PrometheusText1.0.0
   static_configs:
   - labels:
       node_type: prometheus
-  - targets:
+    targets:
     - localhost:9090
 ### Add your hammerspace cluster
 - job_name: cluster
@@ -16,7 +23,7 @@ scrape_configs:
     - 10.0.0.71:9101
     - 10.0.0.71:9102
     - 10.0.0.71:9103
-### Add the individual Anvil nodes
+### Add the individual Anvil nodes in an HA setup.
 - job_name: anvil_nodes
   static_configs:
   - labels:
@@ -31,7 +38,7 @@ scrape_configs:
       node_type: anvil
     targets:
     - 10.0.0.66:9100
-### Add the individual DSX nodes
+### Add the individual DSX nodes when you have more than one.
 - job_name: dsx_nodes
   static_configs:
   - labels:
